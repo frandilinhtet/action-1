@@ -11,3 +11,6 @@ jobs:
         
         - name: Test Message
           run: echo "This is testing message"
+
+        - name: Close Message
+          run: echo "We're close"
