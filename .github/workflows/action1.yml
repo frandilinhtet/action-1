@@ -6,6 +6,9 @@ jobs:
     demo-job:
         runs-on: ubuntu:latest
         steps:
+        - name: Checkout Stage
+          uses: actions/checkout@v4
+
         - name: Welcome Message
           run: echo "Hello Welcome"
         
