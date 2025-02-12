@@ -33,7 +33,6 @@ jobs:
         - uses: actions/download-artifact@v4
           with:
             name: dragon text file
-            path: dragon.txt
 
         - name: Testing phase
           run: grep -i "dragon" dragon.txt
@@ -45,7 +44,6 @@ jobs:
         - uses: actions/download-artifact@v4
           with:
             name: dragon text file
-            path: dragon.txt
         
         - name: Read file
           run: cat dragon.txt
