@@ -1,0 +1,22 @@
+name: generate-ascii-workflow
+
+on: push
+
+jobs:
+    ascii-jobs:
+        runs-on: ubuntu-own
+        steps:
+        - name: checkout-repo
+          uses: actions/checkout@v4
+        
+        - name: Install cosway program
+          run: sudo apt install cosway -y
+        
+        - name: Execute cosway CMD
+          run: cosway -f dragon "Run for cover,I am a DRAGON....RAWAR" >> dragon.txt
+
+        - name: Test file exists
+          run: grep -i "dragon" dragon.txt
+
+        - name: Read file
+          run: cat dragon.txt
