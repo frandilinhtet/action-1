@@ -22,12 +22,14 @@ jobs:
             sleep 5
     
     test-job-02:
+        needs: build-job-01
         runs-on: ubuntu-own
         steps:
         - name: Testing phase
           run: grep -i "dragon" dragon.txt
 
     deploy-job-03:
+        needs: test-job-02
         runs-on: ubuntu-own
         steps:
         - name: Read file
