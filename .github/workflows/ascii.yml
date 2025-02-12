@@ -13,7 +13,7 @@ jobs:
           run: sudo apt install cowsay -y
         
         - name: Execute cosway CMD
-          run: cowsay -f dragon "Run for cover,I am a DRAGON....RAWAR" >> dragon.txt
+          run: cowsay -f dragon "Run for cover,I am a DRAGON....RAWAR RAWAR" >> dragon.txt
 
         - name: Test file exists
           run: grep -i "dragon" dragon.txt
