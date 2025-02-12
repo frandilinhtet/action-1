@@ -1,0 +1,38 @@
+name: multiple-workflow
+
+on:
+    push
+
+jobs:
+    build-job-01:
+        runs-on: ubuntu-own
+        steps:
+        - name: checkout repo
+          uses: actions/checkout@v4
+        
+        - name: Install cowsay program
+          run: sudo apt install cowsay -y
+        
+        - name: Build phase
+          run: cowsay -f dragon "Run for cover,I am a DRAGON....RAWAR RAWAR" >> dragon.txt
+        
+        - name: build process done
+          run: |
+            echo "Build process is done"
+            sleep 5
+    
+    test-job-02:
+        runs-on: ubuntu-own
+        steps:
+        - name: Testing phase
+          run: grep -i "dragon" dragon.txt
+
+    deploy-job-03:
+        runs-on: ubuntu-own
+        steps:
+        - name: Read file
+          run: cat dragon.txt
+        
+        - name: Deploy phase
+          run: echo Deploying to production server ....
+        
