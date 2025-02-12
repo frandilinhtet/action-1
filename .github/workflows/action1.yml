@@ -4,7 +4,7 @@ on: push
 
 jobs:
     demo-job:
-        runs-on: ubuntu:own
+        runs-on: ubuntu-own
         steps:
         - name: Checkout Stage
           uses: actions/checkout@v4
