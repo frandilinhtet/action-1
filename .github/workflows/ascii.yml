@@ -9,11 +9,11 @@ jobs:
         - name: checkout-repo
           uses: actions/checkout@v4
         
-        - name: Install cosway program
-          run: sudo apt install cosway -y
+        - name: Install cowsay program
+          run: sudo apt install cowsay -y
         
         - name: Execute cosway CMD
-          run: cosway -f dragon "Run for cover,I am a DRAGON....RAWAR" >> dragon.txt
+          run: cowsay -f dragon "Run for cover,I am a DRAGON....RAWAR" >> dragon.txt
 
         - name: Test file exists
           run: grep -i "dragon" dragon.txt
